@@ -108,7 +108,7 @@ div.related a:hover {
 }
 
 .switchers > div {
-    margin-right: 5px;
+    margin-inline-end: 5px; /* was: margin-right */
 }
 
 div.related ul::after {
@@ -159,7 +159,7 @@ div.sphinxsidebar h4 {
 }
 
 div.bodywrapper {
-    margin-left: min(25vw, 350px);
+    margin-inline-start: min(25vw, 350px); /* was: margin-left */
 }
 
 div.sphinxsidebarwrapper {
@@ -202,8 +202,9 @@ div.sphinxsidebar input[type='text'] {
     align-items: center;
     width: 12px;
     min-width: 12px;
-    border-radius: 0 5px 5px 0;
-    border-left: none;
+    border-start-end-radius: 5px; /* was: border-radius: 0 5px 5px 0 */
+    border-end-end-radius: 5px;
+    border-inline-start: none; /* was: border-left: none */
 }
 
 #sidebarbutton:hover {
@@ -215,7 +216,7 @@ div.body {
 }
 
 div.body p, div.body dd, div.body li, div.body blockquote {
-    text-align: left;
+    text-align: start; /* was: text-align: left */
     line-height: 1.6;
 }
 div.body h1, div.body h2, div.body h3, div.body h4, div.body h5, div.body h6 {
@@ -240,30 +241,21 @@ div.body pre {
 
 div.body {
     .good pre {
-        border-left: 3px solid var(--good-border);
+        border-inline-start: 3px solid var(--good-border); /* was: border-left */
     }
     .bad pre {
-        border-left: 3px solid var(--bad-border);
+        border-inline-start: 3px solid var(--bad-border); /* was: border-left */
     }
     .maybe pre {
-        border-left: 3px solid var(--middle-border);
+        border-inline-start: 3px solid var(--middle-border); /* was: border-left */
     }
 }
 
 div.code-block-caption {
-    background-color: #eee;
-    border: 1px solid #ac9;
-    border-bottom: none;
-    border-radius: 3px 3px 0 0;
-    padding: 0.3em 0.6em;
-    font-size: 90%;
-    color: #333;
-
     & + div pre {
         border-top-left-radius: 0 !important;
         border-top-right-radius: 0 !important;
     }
-
     & + div .copybutton {
         border-top-right-radius: 0 !important;
     }
@@ -402,7 +394,7 @@ table.docutils th {
 
 table p,
 table li {
-    text-align: left !important;
+    text-align: start !important; /* was: text-align: left */
 }
 
 table.docutils th {
@@ -416,9 +408,9 @@ table.footnote td {
 
 div.footer {
     line-height: 150%;
-    text-align: right;
+    text-align: end; /* was: text-align: right */
     width: auto;
-    margin-right: 10px;
+    margin-inline-end: 10px; /* was: margin-right */
 }
 
 div.footer a {
@@ -506,17 +498,17 @@ div.genindex-jumpbox a {
     cursor: pointer;
     position: absolute;
     top: 0;
-    right: 0;
+    right: 0; /* physical right — always, even in RTL, since code is LTR */
     font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
     font-size: 80%;
     padding-left: .5em;
     padding-right: .5em;
     height: 100%;
     max-height: min(100%, 2.4em);
-    border-radius: 0 3px 0 0;
+    border-radius: 0 3px 0 0; /* physical — top-right corner, always */
     color: #000;
     background-color: #fff;
-    border: 1px solid #ac9; /* follows div.body pre */
+    border: 1px solid #ac9;
     display: none;
 }
 
@@ -583,7 +575,7 @@ div.genindex-jumpbox a {
         width: 100%;
         position: fixed;
         top: 0;
-        left: 0;
+        inset-inline-start: 0; /* was: left: 0 */
         box-shadow: rgba(0, 0, 0, 0.25) 0 0 2px 0;
         z-index: 1;
     }
@@ -605,7 +597,7 @@ div.genindex-jumpbox a {
         align-items: stretch;
     }
     .nav-logo {
-        margin-right: 1rem;
+        margin-inline-end: 1rem; /* was: margin-right */
         flex-shrink: 0;
         align-self: center;
     }
@@ -614,7 +606,7 @@ div.genindex-jumpbox a {
         width: 20px;
     }
     .version_switcher_placeholder {
-        margin-right: 1rem;
+        margin-inline-end: 1rem; /* was: margin-right */
     }
     .version_switcher_placeholder > select {
         height: 100%;
@@ -627,7 +619,7 @@ div.genindex-jumpbox a {
     }
     .nav-content .search input[type=search] {
         border: 0;
-        padding-left: 24px;
+        padding-inline-start: 24px; /* was: padding-left */
         width: 100%;
         flex: 1;
     }
@@ -635,14 +627,14 @@ div.genindex-jumpbox a {
         height: 100%;
         box-shadow: none;
         border: 0;
-        border-left: 1px solid #a9a9a9;
+        border-inline-start: 1px solid #a9a9a9; /* was: border-left */
         cursor: pointer;
-        margin-right: 0;
+        margin-inline-end: 0; /* was: margin-right: 0 */
     }
     .nav-content .search svg {
         position: absolute;
         align-self: center;
-        padding-left: 4px;
+        padding-inline-start: 4px; /* was: padding-left */
     }
     .toggler__input {
         display: none;
@@ -674,7 +666,7 @@ div.genindex-jumpbox a {
         width: 100%;
         background: inherit;
         position: absolute;
-        left: 0;
+        inset-inline-start: 0; /* was: left: 0 */
         top: -8px;
     }
     .toggler__label > span::after {
@@ -695,7 +687,7 @@ div.genindex-jumpbox a {
     }
     .toggler__input:checked ~ .menu-wrapper {
         visibility: visible;
-        left: 0;
+        inset-inline-start: 0; /* was: left: 0 */
     }
 
     /* Sliding side menu */
@@ -703,8 +695,8 @@ div.genindex-jumpbox a {
         display: block;
         position: fixed;
         top: 0;
-        transition: left 400ms ease;
-        left: -310px;
+        transition: inset-inline-start 400ms ease; /* was: transition: left */
+        inset-inline-start: -310px; /* was: left: -310px */
         width: 300px;
         height: 100%;
         background-color: #eee;
@@ -714,7 +706,7 @@ div.genindex-jumpbox a {
     }
     .menu-wrapper.open {
         visibility: visible;
-        left: 0;
+        inset-inline-start: 0; /* was: left: 0 */
     }
     .menu {
         padding: 40px 10px 30px 20px;
@@ -742,10 +734,10 @@ div.genindex-jumpbox a {
         list-style: none;
         line-height: 1.4;
         overflow-wrap: break-word;
-        padding-left: 0;
+        padding-inline-start: 0; /* was: padding-left: 0 */
     }
     .menu ul ul {
-        margin-left: 20px;
+        margin-inline-start: 20px; /* was: margin-left */
         list-style: square;
     }
     .menu ul li {
@@ -801,26 +793,26 @@ div.versionadded,
 div.versionchanged,
 div.deprecated,
 div.deprecated-removed {
-    border-left: 3px solid;
+    border-inline-start: 3px solid; /* was: border-left */
     padding: 0 1rem;
 }
 
 div.versionadded {
-    border-left-color: var(--versionadded-border);
+    border-inline-start-color: var(--versionadded-border); /* was: border-left-color */
 }
 
 div.versionchanged {
-    border-left-color: var(--versionchanged-border);
+    border-inline-start-color: var(--versionchanged-border);
 }
 
 div.deprecated,
 div.deprecated-removed,
 div.versionremoved {
-    border-left-color: var(--deprecated-border);
+    border-inline-start-color: var(--deprecated-border);
 }
 
 div.soft-deprecated {
-    border-left-color: var(--soft-deprecated-border);
+    border-inline-start-color: var(--soft-deprecated-border);
 }
 
 div.versionadded .versionmodified {
