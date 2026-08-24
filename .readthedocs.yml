@@ -10,8 +10,6 @@ build:
     python: "3"
 
   commands:
-    # TEMPORARY: build the Persian (fa) translation to preview RTL support.
     - git clone --depth=1 https://github.com/python/cpython
-    - git clone --depth=1 https://github.com/python/python-docs-fa cpython/Doc/locales/fa/LC_MESSAGES
-    - make html CPYTHON_PATH=cpython SPHINXERRORHANDLING= SPHINXOPTS="-D language=fa -D html_theme_options.is_rtl=true"
+    - make html CPYTHON_PATH=cpython
     - mv cpython/Doc/build _readthedocs
