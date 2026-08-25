@@ -22,6 +22,7 @@ To use this theme, add the following to `conf.py`:
 
 - `html_sidebars`, defaults taken from https://www.sphinx-doc.org/en/master/usage/configuration.html#confval-html_sidebars
 
+- `is_rtl` - Enable right-to-left (RTL) layout for languages such as Persian, Arabic, or Hebrew. Code blocks remain left-to-right. Defaults to `false`.
 
 ## Translation
 
