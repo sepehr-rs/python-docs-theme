@@ -240,10 +240,6 @@ div.body {
     padding-inline-start: 1.2em;
 }
 
-body[dir='rtl'] div.body {
-    direction: rtl;
-}
-
 div.body p, div.body dd, div.body li, div.body blockquote {
     text-align: start;
     line-height: 1.6;
@@ -265,11 +261,6 @@ div.body hr {
     border: 0;
     background-color: #ccc;
     height: 1px;
-}
-
-dl > dt span ~ em,
-.sig {
-    font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
 }
 
 pre,
@@ -484,6 +475,11 @@ div.footer a:hover {
     --refcount-return-borrowed-ref: var(--middle-color);
 }
 
+dl > dt span ~ em,
+.sig {
+    font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+}
+
 .refcount {
     color: var(--refcount);
 }
@@ -669,6 +665,7 @@ div.genindex-jumpbox a {
         flex: auto;
         border: 1px solid #a9a9a9;
         align-items: stretch;
+        position: relative;
     }
     .nav-content .search input[type=search] {
         border: 0;
@@ -686,7 +683,8 @@ div.genindex-jumpbox a {
     }
     .nav-content .search svg {
         position: absolute;
-        align-self: center;
+        top: 50%;
+        transform: translateY(-50%);
         inset-inline-start: 4px;
     }
     .toggler__input {
