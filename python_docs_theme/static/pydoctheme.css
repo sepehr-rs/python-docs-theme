@@ -269,14 +269,16 @@ div.body hr {
     height: 1px;
 }
 
-pre,
-code,
-div.highlight,
-dl > dt span ~ em,
-.sig,
-.sig-param {
-    direction: ltr;
-    unicode-bidi: isolate;
+body[dir='rtl'] {
+    & pre,
+    & code,
+    & div.highlight,
+    & dl > dt span ~ em,
+    & .sig,
+    & .sig-param {
+        direction: ltr;
+        unicode-bidi: isolate;
+    }
 }
 
 body[dir='rtl'] .sig {
@@ -501,11 +503,6 @@ div.footer a {
     text-underline-offset: auto;
 }
 
-dl > dt span ~ em,
-.sig {
-    font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
-}
-
 div.footer a:hover {
     color: #0095c4;
 }
@@ -557,7 +554,10 @@ div.footer a:hover {
     color: var(--threadsafety-atomic);
 }
 
-
+dl > dt span ~ em,
+.sig {
+    font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+}
 
 .toctree-wrapper ul {
     padding-inline-start: 20px;
