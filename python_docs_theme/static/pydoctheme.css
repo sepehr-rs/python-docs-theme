@@ -231,6 +231,12 @@ div.sphinxsidebar input[type='text'] {
     border-left: none;
 }
 
+body[dir='rtl'] #sidebarbutton {
+    border-radius: 5px 0 0 5px;
+    border-right: none;
+    border-left: none;
+}
+
 #sidebarbutton:hover {
     background-color: #AAAAAA;
 }
@@ -271,6 +277,10 @@ dl > dt span ~ em,
 .sig-param {
     direction: ltr;
     unicode-bidi: isolate;
+}
+
+body[dir='rtl'] .sig {
+    text-align: right;
 }
 
 div.body pre {
@@ -454,6 +464,32 @@ table.footnote td {
     border: 0 !important;
 }
 
+body[dir='rtl'] div#search-results,
+body[dir='rtl'] div#search-results ul.search li {
+    direction: rtl;
+    text-align: right;
+    unicode-bidi: isolate;
+}
+
+body[dir='rtl'] div#search-results ul.search li p {
+    text-align: right;
+}
+
+body[dir='rtl'] div.citation > span {
+    float: right;
+}
+
+body[dir='rtl'] aside.footnote > span {
+    float: right;
+    padding-right: 0;
+    padding-left: 0.5rem;
+}
+
+body[dir='rtl'] aside.footnote > p {
+    margin-left: 0;
+    margin-right: 2rem;
+}
+
 div.footer {
     line-height: 150%;
     text-align: end;
@@ -465,6 +501,11 @@ div.footer a {
     text-underline-offset: auto;
 }
 
+dl > dt span ~ em,
+.sig {
+    font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
+}
+
 div.footer a:hover {
     color: #0095c4;
 }
@@ -473,11 +514,6 @@ div.footer a:hover {
 :root {
     --refcount: var(--good-color);
     --refcount-return-borrowed-ref: var(--middle-color);
-}
-
-dl > dt span ~ em,
-.sig {
-    font-family: Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
 }
 
 .refcount {
