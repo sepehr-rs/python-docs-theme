@@ -8,24 +8,6 @@
     --bad-border: rgb(244, 76, 78);
 }
 
-@font-face {
-    font-family: "Vazirmatn";
-    src: url("fonts/Vazirmatn-VF.woff2") format("woff2");
-    font-weight: 100 900;
-    font-style: normal;
-    font-display: swap;
-}
-
-:lang(fa) :is(
-    body,
-    div.body :is(h1, h2, h3, h4, h5, h6),
-    form.inline-search input,
-    div.sphinxsidebar input,
-    div.related input
-) {
-    font-family: Vazirmatn, -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
-}
-
 /* unset some styles from the classic stylesheet */
 div.document,
 div.body,
@@ -285,6 +267,28 @@ div.body hr {
     border: 0;
     background-color: #ccc;
     height: 1px;
+}
+
+/* Persian (fa) uses Vazirmatn, since the default system font stack renders
+   Arabic-script text poorly on many platforms. This is scoped to :lang(fa)
+   rather than [dir='rtl'] so other RTL languages (Arabic, Hebrew, Urdu...)
+   and all LTR languages are unaffected. */
+@font-face {
+    font-family: "Vazirmatn";
+    src: url("fonts/Vazirmatn-VF.woff2") format("woff2");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+:lang(fa) :is(
+    body,
+    div.body :is(h1, h2, h3, h4, h5, h6),
+    form.inline-search input,
+    div.sphinxsidebar input,
+    div.related input
+) {
+    font-family: Vazirmatn, -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
 }
 
 body[dir='rtl'] {
