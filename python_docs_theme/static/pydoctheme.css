@@ -1,4 +1,4 @@
-/* Common colours */
+/* Common colours and farsi font */
 :root {
     --good-color: rgb(41 100 51);
     --good-border: rgb(79 196 100);
@@ -6,6 +6,24 @@
     --middle-border: rgb(244, 227, 76);
     --bad-color: rgb(159 49 51);
     --bad-border: rgb(244, 76, 78);
+}
+
+@font-face {
+    font-family: "Vazirmatn";
+    src: url("fonts/Vazirmatn-VF.woff2") format("woff2");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+:lang(fa) :is(
+    body,
+    div.body :is(h1, h2, h3, h4, h5, h6),
+    form.inline-search input,
+    div.sphinxsidebar input,
+    div.related input
+) {
+    font-family: Vazirmatn, -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
 }
 
 /* unset some styles from the classic stylesheet */
