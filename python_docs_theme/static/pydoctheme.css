@@ -282,9 +282,11 @@ div.body hr {
 :lang(fa) :is(
     body,
     div.body :is(h1, h2, h3, h4, h5, h6),
-    form.inline-search input,
-    div.sphinxsidebar input,
-    div.related input
+    div.sphinxsidebar :is(h3, h4),
+    input,
+    select,
+    textarea,
+    button:not(.copybutton)
 ) {
     font-family: Vazirmatn, -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
 }
