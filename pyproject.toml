@@ -10,7 +10,7 @@ name = "python-docs-theme"
 description = "The Sphinx theme for the CPython docs and related projects"
 readme = "README.md"
 license = "PSF-2.0"
-license-files = [ "LICENSE" ]
+license-files = [ "LICENSE", "python_docs_theme/static/fonts/OFL.txt" ]
 authors = [ { name = "Python Docs Sphinx Theme maintainers" } ]
 requires-python = ">=3.12"
 classifiers = [
