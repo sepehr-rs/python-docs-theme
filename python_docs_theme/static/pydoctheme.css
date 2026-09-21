@@ -270,9 +270,7 @@ div.body hr {
 }
 
 /* Persian (fa) uses Vazirmatn, since the default system font stack renders
-   Arabic-script text poorly on many platforms. This is scoped to :lang(fa)
-   rather than [dir='rtl'] so other RTL languages (Arabic, Hebrew, Urdu...)
-   and all LTR languages are unaffected. */
+   Arabic-script text poorly on many platforms. */
 @font-face {
     font-family: "Vazirmatn";
     src: url("fonts/Vazirmatn-VF.woff2") format("woff2");
