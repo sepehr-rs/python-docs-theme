@@ -44,6 +44,9 @@ build.hooks.custom.path = "babel_runner.py"
 build.targets.wheel.packages = [ "python_docs_theme" ]
 build.targets.wheel.exclude = [ "python_docs_theme/locale/**/*.po" ]
 
+[tool.check-wheel-contents]
+ignore = [ "W002" ]
+
 [tool.ruff]
 fix = true
 lint.select = [
