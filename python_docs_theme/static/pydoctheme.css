@@ -233,8 +233,14 @@ div.sphinxsidebar input[type='text'] {
 
 body[dir='rtl'] #sidebarbutton {
     border-radius: 5px 0 0 5px;
-    border-right: none;
     border-left: none;
+}
+
+/* Remove this when Sphinx has RTL support */
+
+body[dir='rtl'] #sidebarbutton span {
+    display: inline-block;
+    transform: scaleX(-1);
 }
 
 #sidebarbutton:hover {
