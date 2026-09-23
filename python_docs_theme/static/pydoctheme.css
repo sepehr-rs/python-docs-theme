@@ -237,7 +237,6 @@ body[dir='rtl'] #sidebarbutton {
 }
 
 /* Remove this when Sphinx has RTL support */
-
 body[dir='rtl'] #sidebarbutton span {
     display: inline-block;
     transform: scaleX(-1);
